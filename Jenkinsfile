@@ -66,8 +66,8 @@ pipeline {
             steps {
                script{
                    withDockerRegistry(credentialsId: 'docker-cred') {
-                    sh "docker tag santa123 adijaiswal/santa123:latest"
-                    sh "docker push adijaiswal/santa123:latest"
+                    sh "docker tag santa123 sat234/santa123:latest"
+                    sh "docker push sat234/santa123:latest"
                  }
                }
             }
@@ -76,7 +76,7 @@ pipeline {
         	 
         stage('Docker Image Scan') {
             steps {
-               sh "trivy image adijaiswal/santa123:latest "
+               sh "trivy image sat234/santa123:latest "
             }
         }}
         
